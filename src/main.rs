@@ -2,6 +2,7 @@
 
 use std::env;
 mod mini_commands;
+mod change_app_status;
 
 fn main() {
     // Checks if operating system supported
@@ -9,7 +10,10 @@ fn main() {
     match USERS_OPERATING_SYSTEM {
         "linux" => (),
         _ => println!("Sorry operating system {} not supported\n exiting...", USERS_OPERATING_SYSTEM)
-    } 
+    }
+    // Checks status on the config dir/files
+    change_app_status::status_file_check();
+
     // Gets user arguments
     let args: Vec<String> = env::args().collect();
     // checks if their is more than 1 argument given to terminal, due to first argument pregiven so
@@ -17,7 +21,7 @@ fn main() {
     if args.len() > 1 {
         match args[1].as_str() {
             "-h" => mini_commands::help(),
-            "-v" => mini_commands::version(),
+            "-v" => mini_commands::version(), 
             _ => println!("Command {} not recognized, try '-h' for help", args[1]),
         }
     } else {
