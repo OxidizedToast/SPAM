@@ -2,7 +2,9 @@
 
 use std::env;
 mod mini_commands;
-mod change_app_status;
+mod config_dependancy_status;
+mod config_file;
+mod toggle;
 
 fn main() {
     // Checks if operating system supported
@@ -11,8 +13,8 @@ fn main() {
         "linux" => (),
         _ => println!("Sorry operating system {} not supported\n exiting...", USERS_OPERATING_SYSTEM)
     }
-    // Checks status on the config dir/files
-    change_app_status::status_file_check();
+    // Checks status on the config dir/files if they exist
+    config_dependancy_status::status_file_check();
 
     // Gets user arguments
     let args: Vec<String> = env::args().collect();
@@ -22,6 +24,7 @@ fn main() {
         match args[1].as_str() {
             "-h" => mini_commands::help(),
             "-v" => mini_commands::version(), 
+            "-t" => toggle::toggle(),
             _ => println!("Command {} not recognized, try '-h' for help", args[1]),
         }
     } else {

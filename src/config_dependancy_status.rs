@@ -26,10 +26,9 @@ fn check_file(config_dir_path: &PathBuf) {
     let config_file_path = config_dir_path.join("config.toml");
 
     if config_file_path.exists() {
-        // file exists, do nothing
-        //
-        // CHECK IF THE FILE IS EMPTY AND IF SO WRITE THE DEFAULT LINE
-        //
+        // file exists, does nothing
+        check_if_empty(&config_file_path);
+
     } else {
         let mut file = fs::File::create(&config_file_path).unwrap();
         file.write_all(b"toggled = false").unwrap();
@@ -37,6 +36,23 @@ fn check_file(config_dir_path: &PathBuf) {
         println!("Config file created at ~/.config/spam/config.toml");
     }
 }
+fn check_if_empty(path: &PathBuf) {
+    match fs::metadata(path) {
+        Ok(metadata) => {
+            if metadata.len() == 0 {
+                println!("Config file is empty.");
+                println!("Writing default config");
+              let mut file = fs::File::create(path).unwrap();
+              file.write_all(b"toggled = false").unwrap();
+            }
+        }
+        Err(e) => {
+          eprintln!("Failed to get file metadata: {}", e); 
+          std::process::exit(1);
+      }
+    }
+}
+
 
 // cleaner name but keeps check dir name for readability when editing
 pub fn status_file_check() {

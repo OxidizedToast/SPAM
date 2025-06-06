@@ -13,6 +13,7 @@ pub fn help(){
     Commands:
         -h  =>  Prints this help screen
         -v  =>  Prints version of project
+        -t  =>  Toggles if daemon is on
  "#
     );
 }
