@@ -36,7 +36,7 @@ fn check_file(config_dir_path: &PathBuf) {
         println!("Config file created at ~/.config/spam/config.toml");
     }
 }
-fn check_if_empty(path: &PathBuf) {
+pub fn check_if_empty(path: &PathBuf) {
     match fs::metadata(path) {
         Ok(metadata) => {
             if metadata.len() == 0 {
