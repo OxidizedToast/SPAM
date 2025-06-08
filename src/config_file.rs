@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: Apache-2.0
 
-use std::path::PathBuf;
 use std::fs;
-use std::process;
 use std::io::{self, Write};
+use std::path::PathBuf;
+use std::process;
 
 pub fn check_file_contents() -> bool {
     let home = std::env::var("HOME").unwrap();
@@ -24,7 +24,9 @@ pub fn check_file_contents() -> bool {
         println!("Set default config? [Y/n]");
 
         let mut input = String::new();
-        io::stdin().read_line(&mut input).expect("Failed to read input");
+        io::stdin()
+            .read_line(&mut input)
+            .expect("Failed to read input");
 
         if input.trim().to_uppercase() == "Y" {
             println!("Adding default config!");

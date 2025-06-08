@@ -1,17 +1,20 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use std::env;
-mod mini_commands;
 mod config_dependancy_status;
 mod config_file;
+mod mini_commands;
 mod toggle;
 
 fn main() {
     // Checks if operating system supported
-    const USERS_OPERATING_SYSTEM :&str = std::env::consts::OS;
+    const USERS_OPERATING_SYSTEM: &str = std::env::consts::OS;
     match USERS_OPERATING_SYSTEM {
         "linux" => (),
-        _ => println!("Sorry operating system {} not supported\n exiting...", USERS_OPERATING_SYSTEM)
+        _ => println!(
+            "Sorry operating system {} not supported\n exiting...",
+            USERS_OPERATING_SYSTEM
+        ),
     }
     // Checks status on the config dir/files if they exist
     config_dependancy_status::status_file_check();
@@ -23,7 +26,7 @@ fn main() {
     if args.len() > 1 {
         match args[1].as_str() {
             "-h" => mini_commands::help(),
-            "-v" => mini_commands::version(), 
+            "-v" => mini_commands::version(),
             "-t" => toggle::toggle(),
             _ => println!("Command {} not recognized, try '-h' for help", args[1]),
         }

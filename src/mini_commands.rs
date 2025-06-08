@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 
-pub fn help(){
+pub fn help() {
     println!(
         r#"
  ██████╗       ███████╗██████╗  █████╗ ███╗   ███╗
@@ -18,7 +18,7 @@ pub fn help(){
     );
 }
 
-pub fn version(){
+pub fn version() {
     let version = env!("CARGO_PKG_VERSION");
     println!("Project version: {}", version);
 }

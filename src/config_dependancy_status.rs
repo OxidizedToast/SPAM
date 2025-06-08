@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
-use std::path::PathBuf;
 use std::fs;
 use std::io::Write;
+use std::path::PathBuf;
 
 // checks for the directories and files
 fn check_dir() {
@@ -28,7 +28,6 @@ fn check_file(config_dir_path: &PathBuf) {
     if config_file_path.exists() {
         // file exists, does nothing
         check_if_empty(&config_file_path);
-
     } else {
         let mut file = fs::File::create(&config_file_path).unwrap();
         file.write_all(b"toggled = false").unwrap();
@@ -42,17 +41,16 @@ pub fn check_if_empty(path: &PathBuf) {
             if metadata.len() == 0 {
                 println!("Config file is empty.");
                 println!("Writing default config");
-              let mut file = fs::File::create(path).unwrap();
-              file.write_all(b"toggled = false").unwrap();
+                let mut file = fs::File::create(path).unwrap();
+                file.write_all(b"toggled = false").unwrap();
             }
         }
         Err(e) => {
-          eprintln!("Failed to get file metadata: {}", e); 
-          std::process::exit(1);
-      }
+            eprintln!("Failed to get file metadata: {}", e);
+            std::process::exit(1);
+        }
     }
 }
-
 
 // cleaner name but keeps check dir name for readability when editing
 pub fn status_file_check() {
