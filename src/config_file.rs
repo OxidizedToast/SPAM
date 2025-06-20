@@ -44,3 +44,7 @@ pub fn check_file_contents() -> bool {
         process::exit(1);
     }
 }
+
+
+
+
