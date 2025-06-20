@@ -1,4 +1,6 @@
-# NOT READY YET - IN PRODUCTION
+# NOT READY YET - OUT OF PRODUCTION
+# HOPEFULLY WILL REGAIN MOTIVATION TO WORK ON PROJECT
+
 
 # SPAM
 Stay Productive App Manager, a app to keep you productive. Written in 100% Rust.
