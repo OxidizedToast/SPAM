@@ -1,0 +1,15 @@
+/home/ot/Projects/spam/bin/Debug/net9.0/spam
+/home/ot/Projects/spam/bin/Debug/net9.0/spam.deps.json
+/home/ot/Projects/spam/bin/Debug/net9.0/spam.runtimeconfig.json
+/home/ot/Projects/spam/bin/Debug/net9.0/spam.dll
+/home/ot/Projects/spam/bin/Debug/net9.0/spam.pdb
+/home/ot/Projects/spam/obj/Debug/net9.0/spam.GeneratedMSBuildEditorConfig.editorconfig
+/home/ot/Projects/spam/obj/Debug/net9.0/spam.AssemblyInfoInputs.cache
+/home/ot/Projects/spam/obj/Debug/net9.0/spam.AssemblyInfo.cs
+/home/ot/Projects/spam/obj/Debug/net9.0/spam.csproj.CoreCompileInputs.cache
+/home/ot/Projects/spam/obj/Debug/net9.0/spam.sourcelink.json
+/home/ot/Projects/spam/obj/Debug/net9.0/spam.dll
+/home/ot/Projects/spam/obj/Debug/net9.0/refint/spam.dll
+/home/ot/Projects/spam/obj/Debug/net9.0/spam.pdb
+/home/ot/Projects/spam/obj/Debug/net9.0/spam.genruntimeconfig.cache
+/home/ot/Projects/spam/obj/Debug/net9.0/ref/spam.dll
