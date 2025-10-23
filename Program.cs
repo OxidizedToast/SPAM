@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 
-
 namespace spam {
   class Program {
     static void Main(String[] args)
@@ -11,7 +10,7 @@ namespace spam {
           Console.WriteLine("Sorry, only linux is supported currently.");
           Environment.Exit(0);
       }
-      Version version_number = new Version(0, 0, 1);
+      Version version_number = new Version(0, 0, 2);
       const string Title = @"  
   █████████  ███████████    █████████   ██████   ██████
  ███░░░░░███░░███░░░░░███  ███░░░░░███ ░░██████ ██████ 
@@ -35,11 +34,15 @@ namespace spam {
       if(choice == "1" || choice == "toggle") {
           Console.WriteLine("toggling Daemon...");
       } else if(choice == "2" || choice == "status") {
-          // ADD STATUS
-          Console.WriteLine("Status is: ");
+          Status.CheckStatus();
       } else if(choice == "3" || choice == "help"){
-          // Fill in help screen / documentation link
-          Console.WriteLine("Options:");
+          Console.WriteLine(@"Options: 
+          [1] Toggle (toggle) # Toggles the status of daemon
+          [2] Status (status) # Returns status / state of daemon(on/off)
+          [3] Help (help)     # Displays this screen
+          [4] Exit (exit)     # Exits program
+          Coded by: OxidizedToast
+              ");
       } else if(choice == "4" || choice == "exit") {
               Console.WriteLine("Goodbye.");
               Environment.Exit(0);
